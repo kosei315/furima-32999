@@ -1,56 +1,24 @@
 # README
-usersテーブル
 
-| Column                | Type       | Options      |
-| --------------------- | ---------- | ------------ |
-| name                  | string     | null: false  |
-| email                 | string     | null: false  |
-| password              | string     | null: false  |
-| full_width_last_name  | string     | null: false  |
-| full_width_first_name | string     | null: false  |
-| kana_first_name       | string     | null: false  |
-| kana_last_name        | string     | null: false  |
-| birthday              | integer    | null: false  |
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
+Things you may want to cover:
 
-### Association
-- has_many :items
-- has_many :personal
+* Ruby version
 
-itemsテーブル
+* System dependencies
 
-| Column        | Type       | Options                        |
-| ------------- | ------     | -------------------------------|
-| product name  | string     | null: false                    |
-| category      | string     | null: false                    |
-| price         | integer    | null: false                    |
-| seller        | string     | null: false                    |
-| user          | references | null: false, foreign_key: true |
+* Configuration
 
+* Database creation
 
-### Association
-- belongs_to :user
-- has_one    :personal
+* Database initialization
 
-personalテーブル
+* How to run the test suite
 
-| Column   | Type       | Options                        |
-| -------  | ---------- | ------------------------------ |
-| purchase | integer    | null: false                    |
-| user     | references | null: false, foreign_key: true |
-| item     | references | null: false, foreign_key: true |
-### Association
-- belongs_to :user
-- belongs_to :item
-- has_one    :serect
+* Services (job queues, cache servers, search engines, etc.)
 
-serectテーブル
+* Deployment instructions
 
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| address   | string     | null: false                    |
-| user      | references | null: false, foreign_key: true |
-| personal  | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :personal
+* ...
