@@ -22,7 +22,7 @@ itemsテーブル
 | ---------------------| ------     | -------------------------------|
 | product_name         | string     | null: false                    |商品名
 | category_id          | integer    | null: false                    |カテゴリー
-| price                | string     | null: false                    |値段
+| price_id             | integer    | null: false                    |値段
 | product_description  | text       | null: false                    |商品説明
 | product_condition_id | integer    | null: false                    |商品の状態
 | shipping_charges_id  | integer    | null: false                    |配送料の負担
@@ -55,7 +55,6 @@ serectsテーブル
 | address         | string     | null: false                    |番地
 | building_name   | string     |                                |建物名
 | phone number    | string     | null: false                    |電話番号
-| items           | references | null: false, foreign_key: true |
 | personal        | references | null: false, foreign_key: true |
 
 ### Association
