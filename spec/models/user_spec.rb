@@ -60,6 +60,21 @@ describe User do
       @user.valid?
       expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
+    it "全角では登録できないこと" do
+      @user.password = "ああああああ"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Password Include both letters and numbers")
+    end
+    it "数字のみでは登録できないこと" do
+      @user.password = "111111"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Password Include both letters and numbers")
+    end
+    it "英語のみでは登録できないこと" do
+      @user.password = "aaaaaaa"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Password Include both letters and numbers")
+    end
   end
 
   describe "新規登録/本人情報確認" do
