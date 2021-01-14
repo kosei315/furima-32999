@@ -14,7 +14,6 @@ class Item < ApplicationRecord
       validates :product_name
       validates :price , numericality: { greater_than_or_equal_to: 333 ,less_than_or_equal_to: 9999999}
       validates :product_description
-      validates :user
       validates :image
     end
     with_options numericality: { other_than: 1 } do
