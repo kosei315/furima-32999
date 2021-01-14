@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe User do
+RSpec.describe User do
   before do
     @user = FactoryBot.build(:user)
   end
@@ -9,13 +9,11 @@ describe User do
     it "ニックネームが必須であること" do
       @user.name = ""
       @user.valid?
-      #binding.pry
       expect(@user.errors.full_messages).to include "Name can't be blank"
     end
     it "メールアドレスが必須であること" do
       @user.email = ""
       @user.valid?
-      #binding.pry
       expect(@user.errors.full_messages).to include "Email can't be blank"
     end
     it "メールアドレスが一意性であること" do

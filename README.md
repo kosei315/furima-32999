@@ -22,7 +22,7 @@ itemsテーブル
 | ---------------------| ------     | -------------------------------|
 | product_name         | string     | null: false                    |商品名
 | category_id          | integer    | null: false                    |カテゴリー
-| price             　　| integer    | null: false                    |値段
+| price                | integer    | null: false                    |値段
 | product_description  | text       | null: false                    |商品説明
 | product_condition_id | integer    | null: false                    |商品の状態
 | shipping_charges_id  | integer    | null: false                    |配送料の負担
