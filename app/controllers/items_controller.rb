@@ -5,6 +5,10 @@ class ItemsController < ApplicationController
     @item = Item.includes(:user).order("updated_at DESC")
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def new
     @item = Item.new
   end
@@ -21,7 +25,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:category_id, :product_condition_id, :shipping_charges_id, :delivery_area_id, :data_of_shipment_id,:image, :product_name, :product_description, :price).merge(user_id: current_user.id)
+    params.require(:item).permit(:category_id, :product_condition_id, :shipping_charge_id, :delivery_area_id, :data_of_shipment_id,:image, :product_name, :product_description, :price).merge(user_id: current_user.id)
   end
 
 end
