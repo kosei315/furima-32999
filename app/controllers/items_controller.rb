@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new,:edit,:update]
   before_action :params_id, only: [:show, :edit, :update]
   def index
     @item = Item.includes(:user).order("updated_at DESC")
@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    unless user_signed_in? && current_user.id == @item.user.id
+    unless current_user.id == @item.user.id
     redirect_to root_path
     end
   end
