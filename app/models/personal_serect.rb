@@ -3,7 +3,6 @@ class PersonalSerect
   attr_accessor :postal_code,:delivery_area_id,:municipality,:address,:building_name,:phone_number,:user_id,:item_id,:token
 
   
-  # ここにバリデーションの処理を書く
   with_options presence: true do
     validates :postal_code, format: {with: /\A\d{3}[-]\d{4}\z/}
     validates :municipality

@@ -5,11 +5,16 @@ RSpec.describe PersonalSerect, type: :model do
     @personal_serect = FactoryBot.build(:personal_serect)
   end
   describe "商品購入機能" do
+    context '商品購入がうまく行く時' do
     it "必要な情報を適切に入力すると、商品の購入ができること" do
-      @personal_serect.postal_code = nil
-      @personal_serect.valid?
-      expect(@personal_serect.errors.full_messages).to include "Postal code can't be blank"
+      expect(@personal_serect).to be_valid
     end
+    it"建物名がなくても商品の購入ができる"do
+      @personal_serect.building_name = nil
+      expect(@personal_serect).to be_valid
+      end
+  end
+  context '商品購入がうまくいかない時' do
     it "tokenがなければ保存ができないこと" do
       @personal_serect.token = nil
       @personal_serect.valid?
@@ -51,4 +56,5 @@ RSpec.describe PersonalSerect, type: :model do
       expect(@personal_serect.errors.full_messages).to include "Phone number is invalid"
     end
   end
+end
 end
