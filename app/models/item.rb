@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
     belongs_to :user
-    has_one_attached :personal
+    has_one :personal
     has_one_attached :image
 
     extend ActiveHash::Associations::ActiveRecordExtensions
@@ -17,7 +17,6 @@ class Item < ApplicationRecord
       validates :product_description
       validates :image
     end
-
     
 
     with_options numericality: { other_than: 1 } do

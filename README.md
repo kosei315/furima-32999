@@ -50,7 +50,7 @@ serectsテーブル
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | postal_code     | string     | null: false                    |郵便番号
-| prefectures_id  | integer    | null: false                    |都道府県
+| delivery_area_id| integer    | null: false                    |都道府県
 | municipality    | string     | null: false                    |市区町村
 | address         | string     | null: false                    |番地
 | building_name   | string     |                                |建物名
